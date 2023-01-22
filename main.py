@@ -11,6 +11,8 @@ def attack(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} нанёс противнику урон, равный '
                 f'{5 + randint(-3, -1)}')
+    else:
+        return ''
 
 
 def defence(char_name: str, char_class: str) -> str:
@@ -20,6 +22,8 @@ def defence(char_name: str, char_class: str) -> str:
         return (f'{char_name} блокировал {10 + randint(-2, 2)} ед. урона')
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} ед. урона')
+    else:
+        return ''
 
 
 def special(char_name: str, char_class: str) -> str:
@@ -30,6 +34,8 @@ def special(char_name: str, char_class: str) -> str:
         return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
     if char_class == 'healer':
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
+    else:
+        return ''
 
 
 def start_training(char_name: str, char_class: str) -> str:
@@ -72,6 +78,8 @@ def choice_char_class() -> str:
         if char_class == 'healer':
             print('Лекарь — могущественный заклинатель. '
                   'Черпает силы из природы, веры и духов.')
+        else:
+            print('None')
         approve_choice = input('Нажми (Y), чтобы подтвердить выбор, '
                                'или любую другую кнопку, '
                                'чтобы выбрать другого персонажа ').lower()
@@ -88,6 +96,7 @@ def main() -> str:
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
     print(start_training(char_name, char_class))
+    return ''
 
 
 main()
